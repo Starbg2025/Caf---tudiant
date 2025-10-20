@@ -141,7 +141,8 @@ const Hero = () => (
     </header>
 );
 
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+// FIX: Explicitly type SectionTitle as a React.FC to correctly handle the 'children' prop.
+const SectionTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <div className="flex items-center justify-center mb-12 text-center">
         <SectionTitleIcon className="w-6 h-6 text-amber-500 mr-3 hidden sm:block" />
         <h2 className="text-4xl md:text-5xl font-display text-amber-900">{children}</h2>
@@ -158,7 +159,8 @@ const About = () => (
     </section>
 );
 
-const MenuItem = ({ item }: { item: MenuItemType }) => (
+// FIX: Explicitly type MenuItem as a React.FC to correctly handle the 'key' prop in lists.
+const MenuItem: React.FC<{ item: MenuItemType }> = ({ item }) => (
     <div className="py-3">
         <p className="text-lg font-semibold text-stone-800">{item.name}</p>
         {item.options && item.options.length > 0 && (
@@ -191,7 +193,8 @@ const Menu = () => (
     </section>
 );
 
-const ActivityCard = ({ activity }: { activity: ActivityType }) => (
+// FIX: Explicitly type ActivityCard as a React.FC to correctly handle the 'key' prop in lists.
+const ActivityCard: React.FC<{ activity: ActivityType }> = ({ activity }) => (
     <div className="bg-white rounded-xl shadow-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center">
         <div className="p-4 bg-amber-100 rounded-full mb-4">
             <activity.icon className="w-10 h-10 text-amber-700" />
